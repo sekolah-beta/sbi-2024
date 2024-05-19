@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/common_button.dart';
+import 'package:flutter_basic/custom_dropdown_widget.dart';
+import 'package:flutter_basic/text_field_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -31,95 +35,273 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
+      // home: const ButtonTypesExample(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  bool isChecked = false;
+  bool isChecked2 = false;
+  bool isChecked3 = false;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  String gender = 'Laki-laki';
+  bool isActive = true;
+
+  List<String> _kOptions = <String>[
+    'Avanza',
+    'Inova',
+    'Pajero Sport',
+    'Expander'
+  ];
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Color(0xFFda1e3d),
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        backgroundColor: Color(0xFFda1e3d),
+        title: Text(
+          'Home',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.share,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+          const SizedBox(
+            width: 10,
+          )
+        ],
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // TextFieldWidget(
+              //   color: Colors.white,
+              //   label: 'Name',
+              // ),
+              // const SizedBox(
+              //   height: 15,
+              // ),
+              // TextFieldWidget(
+              //   color: Colors.white,
+              //   label: 'Email',
+              // ),
+              // CustomDropdown(
+              //   data: ["Avanza", "Inova", "Pajero Sport", "Expander"],
+              //   label: 'Kendaraan',
+              //   color: Colors.white,
+              // )
+              // Container(
+              //     alignment: Alignment.centerLeft,
+              //     margin: const EdgeInsets.only(bottom: 6),
+              //     child: Text('Makanan Favorit',
+              //         style: TextStyle(
+              //             color: Colors.white,
+              //             fontWeight: FontWeight.bold,
+              //             fontSize: 16))),
+
+              // CheckboxListTile(
+              //   controlAffinity: ListTileControlAffinity.leading,
+              //   value: isChecked,
+              //   title: Text('Rendang', style: TextStyle(color: Colors.white)),
+              //   onChanged: (value) {
+              //     setState(() {
+              //       isChecked = value!;
+              //     });
+              //   },
+              // ),
+              // CheckboxListTile(
+              //   controlAffinity: ListTileControlAffinity.leading,
+              //   value: isChecked2,
+              //   title:
+              //       Text('Nasi Padang', style: TextStyle(color: Colors.white)),
+              //   checkColor: Color(0xFFda1e3d),
+              //   activeColor: Colors.white,
+              //   side: BorderSide(color: Colors.white, width: 2),
+              //   onChanged: (value) {
+              //     setState(() {
+              //       isChecked2 = value!;
+              //     });
+              //   },
+              // ),
+              // CheckboxListTile(
+              //   controlAffinity: ListTileControlAffinity.leading,
+              //   value: isChecked3,
+              //   title: Text('Bakso', style: TextStyle(color: Colors.white)),
+              //   checkColor: Color(0xFFda1e3d),
+              //   activeColor: Colors.white,
+              //   side: BorderSide(color: Colors.white, width: 2),
+              //   onChanged: (value) {
+              //     setState(() {
+              //       isChecked3 = value!;
+              //     });
+              //   },
+              // ),
+
+              // Container(
+              //     alignment: Alignment.centerLeft,
+              //     margin: const EdgeInsets.only(bottom: 6),
+              //     child: Text('Jenis Kelamin',
+              //         style: TextStyle(
+              //             color: Colors.white,
+              //             fontWeight: FontWeight.bold,
+              //             fontSize: 16))),
+
+              // RadioListTile<String>(
+              //     title: Text('Laki-laki'),
+              //     value: 'Laki-laki',
+              //     groupValue: gender,
+              //     onChanged: (value) {
+              //       setState(() {
+              //         gender = value!;
+              //       });
+              //     }),
+
+              // RadioListTile<String>(
+              //     title: Text('Perempuan'),
+              //     value: 'Perempuan',
+              //     groupValue: gender,
+              //     onChanged: (value) {
+              //       setState(() {
+              //         gender = value!;
+              //       });
+              //     }),
+
+              // Container(
+              //     alignment: Alignment.centerLeft,
+              //     margin: const EdgeInsets.only(bottom: 6),
+              //     child: Text('Status Anggota',
+              //         style: TextStyle(
+              //             color: Colors.white,
+              //             fontWeight: FontWeight.bold,
+              //             fontSize: 16))),
+
+              // SwitchListTile(
+              //   value: isActive,
+              //   title: Text(isActive ? 'Active' : 'Inactive',
+              //       style: TextStyle(color: Colors.white)),
+              //   onChanged: (value) {
+              //     setState(() {
+              //       isActive = value;
+              //     });
+              //   },
+              // ),
+
+              // Container(
+              //     alignment: Alignment.centerLeft,
+              //     margin: const EdgeInsets.only(bottom: 6),
+              //     child: Text('Cari Kendaraan',
+              //         style: TextStyle(
+              //             color: Colors.white,
+              //             fontWeight: FontWeight.bold,
+              //             fontSize: 16))),
+
+              // Autocomplete<String>(
+              //   optionsBuilder: (TextEditingValue textEditingValue) {
+              //     if (textEditingValue.text == '') {
+              //       return const Iterable<String>.empty();
+              //     }
+              //     return _kOptions.where((String option) {
+              //       return option
+              //           .toLowerCase()
+              //           .contains(textEditingValue.text.toLowerCase());
+              //     });
+              //   },
+              //   onSelected: (String selection) {
+              //     debugPrint('You just selected $selection');
+              //   },
+              // ),
+
+              // ElevatedButton(
+              //   child: Text('Date Picker'),
+              //   onPressed: () async {
+              //     DateTime? pickedDate = await showDatePicker(
+              //         context: context,
+              //         initialDate: DateTime.now(), //get today's date
+              //         firstDate: DateTime(
+              //             2000), //DateTime.now() - not to allow to choose before today.
+              //         lastDate: DateTime(2101));
+              //   },
+              // )
+              SegmentedButtonExample()
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+class SegmentedButtonExample extends StatefulWidget {
+  const SegmentedButtonExample({super.key});
+
+  @override
+  State<SegmentedButtonExample> createState() => _SegmentedButtonExampleState();
+}
+
+enum Calendar { day, week, month, year }
+
+class _SegmentedButtonExampleState extends State<SegmentedButtonExample> {
+  Calendar calendarView = Calendar.week;
+
+  @override
+  Widget build(BuildContext context) {
+    return SegmentedButton<Calendar>(
+      style: SegmentedButton.styleFrom(
+        backgroundColor: Colors.grey[200],
+        foregroundColor: Color(0xFFda1e3d),
+        selectedForegroundColor: Colors.white,
+        selectedBackgroundColor: Colors.orange,
+      ),
+      segments: const <ButtonSegment<Calendar>>[
+        ButtonSegment<Calendar>(
+            value: Calendar.day,
+            label: Text('Day'),
+            icon: Icon(Icons.calendar_view_day)),
+        ButtonSegment<Calendar>(
+            value: Calendar.week,
+            label: Text('Week'),
+            icon: Icon(Icons.calendar_view_week)),
+        ButtonSegment<Calendar>(
+            value: Calendar.month,
+            label: Text('Month'),
+            icon: Icon(Icons.calendar_view_month)),
+        ButtonSegment<Calendar>(
+            value: Calendar.year,
+            label: Text('Year'),
+            icon: Icon(Icons.calendar_today)),
+      ],
+      selected: <Calendar>{calendarView},
+      onSelectionChanged: (Set<Calendar> newSelection) {
+        setState(() {
+          // By default there is only a single segment that can be
+          // selected at one time, so its value is always the first
+          // item in the selected set.
+          calendarView = newSelection.first;
+        });
+      },
     );
   }
 }
