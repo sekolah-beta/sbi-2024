@@ -45,7 +45,7 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> {
         Container(
             margin: const EdgeInsets.only(bottom: 6),
             child: Text(widget.label ?? '',
-                style: TextStyle(color: Colors.white))),
+                style: const TextStyle(color: Colors.white))),
         DropdownButtonFormField<T>(
           validator: widget.validator,
           decoration: InputDecoration(
@@ -63,7 +63,7 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> {
             color: Colors.white,
           ),
           iconSize: 24,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
           // underline: const SizedBox(),
           onChanged: (T? newValue) {
@@ -81,7 +81,7 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> {
                 widget.itemValue != null
                     ? widget.itemValue!(value) ?? ''
                     : value.toString(),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
             );
           }).toList(),

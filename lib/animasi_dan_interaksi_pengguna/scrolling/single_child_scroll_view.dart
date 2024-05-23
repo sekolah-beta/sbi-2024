@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/text_field_widget.dart';
+import 'package:flutter_basic/shared/widgets/text_field_widget.dart';
 
 class SingleChildScrollViewScreen extends StatefulWidget {
   const SingleChildScrollViewScreen({super.key});
