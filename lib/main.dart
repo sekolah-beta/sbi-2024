@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/06.%20animasi_dan_interaksi_pengguna/animasi_dan_interaksi_pengguna.dart';
-import 'package:flutter_basic/03.%20dasar_widget_dan_lifecycle/dasar_widget_dan_lifecycle.dart';
+import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/animasi_dan_interaksi_pengguna.dart';
+import 'package:sbi_2024/03.%20dasar_widget_dan_lifecycle/dasar_widget_dan_lifecycle.dart';
 
 void main() {
   runApp(const MyApp());

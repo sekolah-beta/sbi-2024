@@ -1,4 +1,4 @@
-package co.nexadream.flutterbasic.flutter_basic
+package com.example.sbi_2024
 
 import io.flutter.embedding.android.FlutterActivity
 
