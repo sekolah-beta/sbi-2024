@@ -4,6 +4,8 @@ import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/action/floating_ac
 import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/action/gesture_detector.dart';
 import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/action/icon_button.dart';
 import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/action/segmented_button.dart';
+import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/animation/explicit_animation.dart';
+import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/animation/implicit_animation.dart';
 import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/form_input/autocomplete.dart';
 import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/form_input/checkbox.dart';
 import 'package:sbi_2024/06.%20animasi_dan_interaksi_pengguna/form_input/datepicker.dart';
@@ -221,6 +223,28 @@ class _AnimasiDanInteraksiPenggunaState
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (builder) {
                     return const InfoScreen();
+                  }));
+                },
+              ),
+            ),
+            const Text('Animation',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            Card(
+              child: ListTile(
+                title: const Text('Implicit Animation'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (builder) {
+                    return const ImplicitAnimationScreen();
+                  }));
+                },
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: const Text('Explicit Animation'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (builder) {
+                    return const ExplicitAnimationScreen();
                   }));
                 },
               ),

@@ -21,7 +21,7 @@ class _GridViewScreenState extends State<GridViewScreen> {
       body: GridView.builder(
           padding: const EdgeInsets.all(20),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
+              crossAxisCount: 2, mainAxisSpacing: 5, crossAxisSpacing: 5),
           itemCount: 10,
           itemBuilder: (BuildContext context, int index) {
             return const Card(
